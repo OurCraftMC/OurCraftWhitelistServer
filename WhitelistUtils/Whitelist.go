@@ -23,6 +23,21 @@ func ReadWhitelistFromJsonFile(filePath string) {
 	log.Printf("Read whitelist file success,File Path:%s", filePath)
 }
 
+func SaveWhitelistToJsonFile(filePath string) {
+	content, err := json.Marshal(WhitelistedUser)
+	if err != nil {
+		log.Printf("Marshal whitelist file failed,%v", err)
+		panic(err)
+	}
+	err = os.WriteFile(filePath, content, 0666)
+	if err != nil {
+		log.Printf("Write whitelist file failed,%v", err)
+		panic(err)
+	}
+	log.Printf("Save whitelist file success,File Path:%s", filePath)
+
+}
+
 func CheckIfInWhitelist(name string) bool {
 	for _, v := range WhitelistedUser {
 		if v.Name == name {
@@ -41,4 +56,5 @@ func AddToWhitelist(name, uuid, contactMethod, contactID string) {
 		ContactID:     contactID,
 	})
 	log.Printf("Add user '%s' to whitelist", name)
+	SaveWhitelistToJsonFile("D://whitelist.json")
 }

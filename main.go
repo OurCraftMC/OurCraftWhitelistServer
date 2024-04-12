@@ -5,6 +5,8 @@ import (
 	"WhiteListServer/handler"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
 )
 
 func main() {
@@ -12,6 +14,17 @@ func main() {
 
 	WhitelistUtils.ReadWhitelistFromJsonFile("D://whitelist.json")
 
+	// ctrl+c 保存
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, os.Interrupt, os.Kill)
+	go func() {
+		<-sigs
+		log.Println("Received Kill Signal, Saving files")
+		WhitelistUtils.SaveWhitelistToJsonFile("D://whitelist.json")
+		os.Exit(0)
+	}()
+
+	// handler
 	http.HandleFunc("/api/applywhitelist", handler.ApplyWhitelist)
 
 	log.Println("Start server")
