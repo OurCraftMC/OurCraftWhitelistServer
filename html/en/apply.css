@@ -1,0 +1,96 @@
+body {
+    background: linear-gradient(to right, rgb(255, 248, 220), rgb(247, 197, 102));
+}
+
+
+#submit_area {
+    text-align: center;
+    margin: 100px auto;
+    width: 520px;
+    height: 620px;
+    background-color: rgba(220, 107, 25,0.9);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 5px 2px 35px -7px rgb(159,166,184);
+
+}
+
+#submit_area h1 {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    /*webkit-text-stroke: 1px black;*/
+}
+
+#submit_area p {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    /*-webkit-text-stroke: 1px black;*/
+}
+#submit_form span{
+    color: white;
+    font-weight: bold;
+}
+
+/* Firefox */
+#submit_form input::placeholder {
+    color: white;
+    font-weight: normal;
+    opacity: 1;
+}
+
+/* Edge 12 -18 */
+#submit_form input::-ms-input-placeholder {
+    color: white;
+    font-weight: normal;
+}
+#submit_form input {
+    background-color: transparent;
+    color: white;
+    width: 320px;
+    padding: 2px;
+    text-indent: 2px;
+    font-weight: normal;
+    font-size: 18px;
+    height: 45px;
+    margin: 30px 30px 30px 5px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #000000;
+}
+
+#submit_button {
+    background-color: rgb(255, 196, 70);
+    border: none;
+    padding: 10px;
+    width: 220px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    font-weight: 100;
+    margin-top: 15px;
+    transition: all 0.25s linear;
+}
+
+
+#submit_button:hover {
+    box-shadow: 2px 2px 15px 2px rgb(255, 212, 0);
+    background-color: rgb(255, 212, 0);
+    /* 选择动画 */
+    animation: submit_ani 0.25s;
+}
+
+/* 定义动画 */
+@keyframes submit_ani {
+    from {
+        background-color:  rgb(255, 196, 70);
+        box-shadow: 0px 0px 0px 0px rgba(190, 225, 255,0);
+    }
+
+    to {
+        background-color: rgb(255, 212, 0);
+        box-shadow: 2px 2px 15px 2px rgb(255, 212, 0);
+    }
+}
