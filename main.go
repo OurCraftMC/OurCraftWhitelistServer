@@ -26,7 +26,7 @@ func main() {
 
 	// handler
 	http.HandleFunc("/api/applywhitelist", handler.ApplyWhitelist)
-
+	http.Handle("/", http.FileServer(http.Dir("./html/")))
 	log.Println("Start server")
 	http.ListenAndServe(":8080", nil)
 }
