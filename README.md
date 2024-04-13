@@ -6,6 +6,7 @@
 - 直接输出whitelist.json文件
 - 支持自定义白名单格式
 - 支持API远程获取白名单
+- 支持Mirai API检测申请人QQ是否在群内
 
 ## 如何运行
 
@@ -20,7 +21,7 @@ docker build -t ourcraft-whitelist .
 然后运行容器
 
 ```bash
-docker run -d --name applyserver -p 8080:8080 -v /path/to/whitelist.json:/whitelist.json ourcraft-whitelist
+docker run -d --name applyserver -p 8080:8080 -v /path/to/whitelist.json:/whitelist.json -v /path/to/config.yaml:/src/config_docker.yaml ourcraft-whitelist
 ```
 
 ### 2. 不用Docker
