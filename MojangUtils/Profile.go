@@ -20,7 +20,7 @@ func GetProfileByUserName(name string) (profile ProfileStruct, err error) {
 	}
 
 	if resp.StatusCode != 200 {
-		log.Printf("status code error: %d %s", resp.StatusCode, resp.Status)
+		log.Printf("GetProfileByUserName status code error: %d %s", resp.StatusCode, resp.Status)
 		return profile, errors.New("not found")
 	}
 

@@ -59,7 +59,7 @@ func ApplyWhitelist(w http.ResponseWriter, r *http.Request) {
 		case err.Error() == "not found":
 			w.Header().Set("Content-Type", "application/json; charset=utf-8")
 			w.WriteHeader(http.StatusNotFound)
-			w.Write([]byte("{\"error\":\"找不到这个用户\",\"success\":false}"))
+			w.Write([]byte("{\"error\":\"无法找到此ID玩家,请确认你的输入\",\"success\":false}"))
 			log.Printf("[IP:%s]User %s Applied,but user not found(via MojangUtils)", ip, name)
 			return
 		default:
