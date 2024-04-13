@@ -19,7 +19,7 @@ docker build -t ourcraft-whitelist .
 然后运行容器
 
 ```bash
-docker run -d -p 8080:8080 -v /path/to/whitelist.json:/whitelist.json ourcraft-whitelist /config.yaml
+docker run -d --name applyserver -p 8080:8080 -v /path/to/whitelist.json:/whitelist.json ourcraft-whitelist
 ```
 
 ### 2. 不用Docker
