@@ -1,6 +1,7 @@
 package WhitelistUtils
 
 import (
+	"WhiteListServer/Config"
 	"encoding/json"
 	"log"
 	"os"
@@ -11,8 +12,9 @@ var WhitelistedUser []WhitelistProfileStruct
 func ReadWhitelistFromJsonFile(filePath string) {
 	content, err := os.ReadFile(filePath)
 	if err != nil {
-		log.Printf("Read whitelist file failed,%v", err)
-		panic(err)
+		log.Printf("Read whitelist file failed,%v ,Ignore File", err)
+		WhitelistedUser = make([]WhitelistProfileStruct, 0)
+		return
 	}
 	err = json.Unmarshal(content, &WhitelistedUser)
 	if err != nil {
@@ -56,5 +58,5 @@ func AddToWhitelist(name, uuid, contactMethod, contactID string) {
 		ContactID:     contactID,
 	})
 	log.Printf("Add user '%s' to whitelist", name)
-	SaveWhitelistToJsonFile("D://whitelist.json")
+	SaveWhitelistToJsonFile(Config.GetConfig().WhitelistFilePath)
 }
