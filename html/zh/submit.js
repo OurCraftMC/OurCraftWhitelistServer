@@ -1,17 +1,12 @@
 function submit() {
     var mcid = $("#mcid").val();
-    var contact_method = $("#contact_method").val();
     var contact_id = $("#contact_id").val();
     if (mcid == "") {
-        alertify.alert("提醒","请输入您的Minecraft ID");
-        return;
-    }
-    if (contact_method == "") {
-        alertify.alert("提醒","请输入您的联系方式");
+        alertify.alert("提醒","请输入Minecraft ID");
         return;
     }
     if (contact_id == "") {
-        alertify.alert("提醒","请输入您的联系方式的ID");
+        alertify.alert("提醒","请输入QQ号");
         return;
     }
 
@@ -21,7 +16,6 @@ function submit() {
         url: "/api/applywhitelist",
         data: {
             name: mcid,
-            contactmethod: contact_method,
             contactid: contact_id
         },
         dataType: 'json',

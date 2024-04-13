@@ -60,3 +60,13 @@ func AddToWhitelist(name, uuid, contactMethod, contactID string) {
 	log.Printf("Add user '%s' to whitelist", name)
 	SaveWhitelistToJsonFile(Config.GetConfig().WhitelistFilePath)
 }
+
+func CheckIfQQInWhitelist(qq string) bool {
+	for _, v := range WhitelistedUser {
+		if v.ContactMethod == "qq" && v.ContactID == qq {
+			log.Printf("Lookup Warning: QQ:'%s' already exists", qq)
+			return true
+		}
+	}
+	return false
+}

@@ -44,6 +44,8 @@ whitelist_file_path: "/path/to/whitelist.json" # 白名单文件路径
 html_path: "/path/to/html" # 静态文件路径 即库中html文件夹路径
 listen_addr: ":8080" # 监听地址 例如"127.0.0.1:8080"
 secret_key: "secret" # 远程获取白名单的密钥, 获取地址为 http://example.com/secret
+mirai_addr: "http://127.0.0.1:5700" # Mirai API地址 用于检测是否在群内
+group_id: 123456789 # Mirai 所在群号
 ```
 
 ## 输出白名单

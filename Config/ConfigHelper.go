@@ -24,5 +24,9 @@ func LoadConfig(configFile string) error {
 		config.HTMLPath += "/"
 	}
 
+	if config.MiraiAddr[len(config.MiraiAddr)-1] != '/' {
+		config.MiraiAddr += "/"
+	}
+
 	return nil
 }

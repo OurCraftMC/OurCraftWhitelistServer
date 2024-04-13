@@ -2,3 +2,5 @@ whitelist_file_path: "/whitelist.json"
 html_path: "/src/html/"
 listen_addr: ":8080"
 secret_key : "secret"
+mirai_addr: "http://127.0.0.1:5700"
+group_id: 123456789
