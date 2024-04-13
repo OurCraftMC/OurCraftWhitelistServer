@@ -10,8 +10,8 @@ import (
 )
 
 func getRealIP(r *http.Request) string {
-	if r.Header.Get("X-Real-Ip") != "" {
-		return r.Header.Get("X-Real-Ip")
+	if r.Header.Get("X-Real-IP") != "" {
+		return r.Header.Get("X-Real-IP")
 	}
 	return r.RemoteAddr
 }
