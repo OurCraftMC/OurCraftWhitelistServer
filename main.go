@@ -39,5 +39,5 @@ func main() {
 	http.HandleFunc("/api/applywhitelist", handler.ApplyWhitelist)
 	http.HandleFunc("/", handler.MultiLanguageIndex)
 	log.Println("Start server")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(Config.GetConfig().ListenAddr, nil)
 }
