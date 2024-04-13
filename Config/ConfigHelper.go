@@ -20,6 +20,9 @@ func LoadConfig(configFile string) error {
 	if err != nil {
 		return err
 	}
+	if config.HTMLPath[len(config.HTMLPath)-1] != '/' {
+		config.HTMLPath += "/"
+	}
 
 	return nil
 }

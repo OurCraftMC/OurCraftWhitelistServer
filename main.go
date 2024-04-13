@@ -21,7 +21,6 @@ func main() {
 	err := Config.LoadConfig(os.Args[1])
 	if err != nil {
 		log.Fatalf("Load Config File Failed: %v", err)
-		panic(err)
 	}
 
 	WhitelistUtils.ReadWhitelistFromJsonFile(Config.GetConfig().WhitelistFilePath)
