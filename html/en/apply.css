@@ -1,7 +1,18 @@
-body {
-    background: linear-gradient(to right, rgb(255, 248, 220), rgb(247, 197, 102));
+@media screen and (max-width: 400px) {
+    body {
+
+    }
+
 }
 
+@media screen and (min-width: 600px) {
+    body {
+        background-size: cover;
+        background: linear-gradient(to right, rgb(255, 248, 220), rgb(247, 197, 102)) no-repeat repeat;
+        min-width: 600px;
+    }
+
+}
 
 #submit_area {
     text-align: center;
@@ -48,7 +59,7 @@ body {
 #submit_form input {
     background-color: transparent;
     color: white;
-    width: 320px;
+    width: 300px;
     padding: 2px;
     text-indent: 2px;
     font-weight: normal;
