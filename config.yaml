@@ -1,0 +1,3 @@
+whitelist_file_path: "/path/to/whitelist.json"
+html_path: "/path/to/html"
+listen_addr: ":8080"
